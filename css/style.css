@@ -50,7 +50,8 @@ body { margin: 0; background: var(--fond); color: var(--encre); font-family: sys
 .popup-stats dd { margin: 0; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
 .pastille { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; border: 1px solid #6b6b6b; }
 
-.position { font-family: ui-monospace, Consolas, monospace; font-size: .85rem; color: var(--encre); }
+.position { font-family: ui-monospace, Consolas, monospace; font-size: .9rem; color: var(--encre); min-height: 2.8em; }
+.position .vide { font-family: system-ui, sans-serif; color: var(--encre-douce); font-size: .9rem; }
 
 .ol-popup {
     position: absolute; bottom: 14px; left: -50px; min-width: 240px;

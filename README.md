@@ -40,6 +40,8 @@ Projet final du module *Langages Web 3 (JavaScript avancé)*, Master 1 G2M (Géo
   d'outre-mer. Elles sont écartées au chargement (codes inférieurs à 10), sans toucher au fichier.
 - **Projection** : les données sont en WGS 84 (EPSG:4326) et la carte en Web Mercator (EPSG:3857) ;
   la conversion se fait à la lecture du GeoJSON et dans `ChefLieu.toFeature()` avec `ol.proj.fromLonLat`.
+- **Position du curseur** : le contrôle `MousePosition` reçoit sa propre classe (`className`), car la classe
+  par défaut `ol-mouse-position` est positionnée en absolu par `ol.css` et sortait du panneau latéral.
 - **Étiquettes** : le nom des chefs-lieux n'apparaît qu'à partir d'un certain zoom (style dépendant de la résolution).
 - OpenLayers 6.5.0 est inclus dans `lib/` (build officiel), le site ne dépend donc d'aucun CDN pour la carte.
 

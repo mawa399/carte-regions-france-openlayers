@@ -36,13 +36,19 @@ const map = new ol.Map({
     controls: ol.control.defaults({ attributionOptions: { collapsible: false } }).extend([
         new ol.control.ScaleLine({ units: 'metric' }),
         new ol.control.MousePosition({
-            coordinateFormat: c => `Lon ${c[0].toFixed(4)}° · Lat ${c[1].toFixed(4)}°`,
+            // className remplace « ol-mouse-position », qu'ol.css place en absolu en haut à droite :
+            // sans cela, les coordonnées s'affichaient hors du panneau.
+            className: 'position-curseur',
+            coordinateFormat: c => `Longitude ${c[0].toFixed(4)}°<br>Latitude ${c[1].toFixed(4)}°`,
             projection: 'EPSG:4326',
             target: document.getElementById('mouse-position'),
-            undefinedHTML: '&nbsp;',
+            undefinedHTML: '<span class="vide">Survolez la carte</span>',
         }),
     ]),
 });
+
+// Texte affiché tant que la souris n'est pas passée sur la carte
+document.querySelector('.position-curseur').innerHTML = '<span class="vide">Survolez la carte</span>';
 
 // ---------------------------------------------------------------------------
 // Couche 1 : les régions (polygones), colorées selon la population
